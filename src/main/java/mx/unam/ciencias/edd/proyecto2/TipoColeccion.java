@@ -1,6 +1,9 @@
 package mx.unam.ciencias.edd.proyecto2;
 
+
+/* Enumeración para los tipos de colecciones */
 public enum TipoColeccion {
+
     LISTA,
     COLA,
     PILA,
@@ -9,9 +12,13 @@ public enum TipoColeccion {
     ARBOLBINARIO_ROJINEGRO,
     ARBOLBINARIO_AVL,
     GRAFICA,
+    /* Si la coleccion obtenida esta mal escrita o no es valida */
     ERROR;
 
-
+    /** 
+     * Nos da el tipo de estructura que es dado una cadena.
+     * @param coleccion la cadena donde dice el tipo de estructura de dato.
+     */
     public static TipoColeccion getColeccion(String coleccion){
         switch(coleccion){
             case "Lista":                   return LISTA;

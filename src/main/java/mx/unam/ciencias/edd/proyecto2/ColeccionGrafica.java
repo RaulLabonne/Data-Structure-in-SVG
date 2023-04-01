@@ -1,22 +1,38 @@
 package mx.unam.ciencias.edd.proyecto2;
 
+import mx.unam.ciencias.edd.ArbolAVL;
+import mx.unam.ciencias.edd.ArbolBinarioCompleto;
+import mx.unam.ciencias.edd.ArbolBinarioOrdenado;
+import mx.unam.ciencias.edd.ArbolRojinegro;
 import mx.unam.ciencias.edd.Lista;
 import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorCola;
 import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorLista;
 import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorPila;
 
+/* 
+ * Clase que dada una colección, da el codigo svg para su graficación.
+ */
 public class ColeccionGrafica {
     
+    /* Numero de elementos */
     int elementos;
+    /* Lista con los elementos */
     Lista<Integer> lista;
+    /* El tipo de colección */
     TipoColeccion coleccion;
 
+    /* Constructor de la clase */
     public ColeccionGrafica(Lista<Integer> lista, TipoColeccion coleccion){
         this.lista = lista;
         this.coleccion = coleccion;
         elementos = lista.getElementos();
     }
 
+    /* 
+     * Metodo que dado el tipo de coleccion da el codigo svg en una cadena para 
+     * poder ser guardada en un archivo de tipo .svg.
+     * Si el tipo de colección es invalido, terminalos el programa.
+     */
     public String codigoSVG(){
         String s = "";
         switch (coleccion) {
@@ -33,19 +49,23 @@ public class ColeccionGrafica {
                 s = gPila.codigoSVG();
                 return s;
             case ARBOLBINARIO_ORDENADO:
+                ArbolBinarioOrdenado<Integer> aOrdenado = new ArbolBinarioOrdenado<>(lista);
                 return "";
             case ARBOLBINARIO_COMPLETO:
+                ArbolBinarioCompleto<Integer> aCompleto = new ArbolBinarioCompleto<>(lista);
                 return "";
             case ARBOLBINARIO_ROJINEGRO:
+                ArbolRojinegro<Integer> rojinegro = new ArbolRojinegro<>(lista);
                 return "";
             case ARBOLBINARIO_AVL:
+                ArbolAVL avl = new ArbolAVL<>(lista);
                 return "";
+            // Si el tipo de colección es invalido.
             default:
-            return "";
-                /* System.out.println("Tipo de colección no disponible, favor de verificar que su tipo de colección este bien escrito o que se encuentre en la siguiente lista.\n" +
-                "Tipos de datos disponibles:\n" + "\tLista\n \tCola\n \tpila\n \tArbolBinarioOrdenado\n \tArbolBinarioCompleto\n \tArbolRojinegro\n \tArbolAVL\n");
+                System.out.println("Tipo de colección no disponible, favor de verificar que su tipo de colección este bien escrito o que se encuentre en la siguiente lista.\n" +
+                "Tipos de datos disponibles:\n" + "\tLista\n \tCola\n \tPila\n \tArbolBinarioOrdenado\n \tArbolBinarioCompleto\n \tArbolRojinegro\n \tArbolAVL\n");
                 System.exit(1);
-                break; */
+                return s; 
         }
     }
 

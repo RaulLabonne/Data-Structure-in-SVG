@@ -2,19 +2,34 @@ package mx.unam.ciencias.edd.proyecto2.graphic;
 
 import mx.unam.ciencias.edd.Lista;
 
+/** 
+ * Clase para obtener la representación grafica de una cola en codigo svg.
+ */
 public class GraficadorCola extends GraficadorLineal{
 
+    /* Altura definitiva de la imagen. */
     final int altura = 100;
+    /* Ancho de la imagen. */
     int ancho;
+    /* Coordenada en el eje Y definitiva para los nodos */
     final int coordenadaY = 20;
 
+    /** 
+     * Constructor de la clase
+     */
     public GraficadorCola(int elementos, Lista<Integer> lista){
         this.elementos = elementos;
         this.lista = lista;
+        //El ancho estara determinado por el número de elementos.
         ancho = 120 * elementos;
+        //Para tener un pequeño borde.
         ancho = ancho + 30;
     }
 
+    /**
+     * Regresa, en una cadena, el codigo svg que grafica la colección dada.
+     * @return el codigo svg que grafica la colección dada.
+     */
     @Override public String codigoSVG(){
         String svg = "";
         svg += inicio();
@@ -32,6 +47,9 @@ public class GraficadorCola extends GraficadorLineal{
         return svg;
     }
 
+    /** 
+     * Nos regresa una flecha que conecta a los nodos.
+     */
     @Override public String linea(int inicioX, int inicioY, int finalX, int finalY){
         String flecha = super.linea(inicioX, inicioY, finalX, finalY);
         flecha += String.format("<polygon points='%d,%d %d,%d %d,%d' fill='black'/>",

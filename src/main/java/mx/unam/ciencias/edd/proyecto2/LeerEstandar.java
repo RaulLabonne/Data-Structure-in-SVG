@@ -5,14 +5,19 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 
-
+/** 
+ * Clase para la leer archivos desde la entrada estandar
+ */
 public class LeerEstandar extends Lectura{
 
-    String s;
-
+    /* Constructor de la clase, solo es para poder llamar a su unico metodo */
     public LeerEstandar(){}
 
-    public String leer(){
+    /** 
+     * Metodo para obtener en una cadena la colección y sus elementos en un formato
+     * aceptable para el demas procesos.
+     */
+    @Override public String leer(){
         String coleccion = "";
         try{
             BufferedReader br =

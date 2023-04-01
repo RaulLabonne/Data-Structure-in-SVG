@@ -2,11 +2,21 @@ package mx.unam.ciencias.edd.proyecto2.graphic;
 
 import mx.unam.ciencias.edd.Lista;
 
+/* 
+ * Clase para obtener la representación grafica de una lista en codigo svg.
+ */
 public class GraficadorLista extends GraficadorCola{
 
+    /**
+     * Constructor de la clase
+     */
     public GraficadorLista(int elementos, Lista<Integer> lista) {
         super(elementos, lista);
     }
+
+    /** 
+     * Nos regresa una flecha que representa el anterior y siguiente de los nodos.
+     */
     @Override public String linea(int inicioX, int inicioY, int finalX, int finalY){
         String dobleflecha= super.linea(inicioX, inicioY, finalX, finalY);
         dobleflecha += String.format("<polygon points='%d,%d %d,%d %d,%d' fill='black'/>",

@@ -5,15 +5,23 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-
+/* 
+ * Clase para leer archivos
+ */
 public class Leer extends Lectura{
 
+    /* El archivo a leer */
     String archivo;
 
+    /* Constuctor de la clase */
     public Leer(String archivo){
         this.archivo = archivo;
     }
 
+    /** 
+     * Metodo para obtener en una cadena la colección y sus elementos en un formato
+     * aceptable para el demas procesos.
+     */
     public String leer(){
         String coleccion = "";
         try {
