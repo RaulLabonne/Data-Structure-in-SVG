@@ -9,6 +9,7 @@ import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorArbol;
 import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorCola;
 import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorLista;
 import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorPila;
+import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorRojinegro;
 
 /* 
  * Clase que dada una colección, da el codigo svg para su graficación.
@@ -61,7 +62,9 @@ public class ColeccionGrafica {
                 return s;
             case ARBOLBINARIO_ROJINEGRO:
                 ArbolRojinegro<Integer> rojinegro = new ArbolRojinegro<>(lista);
-                return "";
+                GraficadorRojinegro gRojinegro = new GraficadorRojinegro(rojinegro, elementos);
+                s = gRojinegro.codigoSVG();
+                return s;
             case ARBOLBINARIO_AVL:
                 ArbolAVL avl = new ArbolAVL<>(lista);
                 return "";
