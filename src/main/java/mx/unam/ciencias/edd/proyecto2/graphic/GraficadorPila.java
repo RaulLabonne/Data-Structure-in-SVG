@@ -18,7 +18,9 @@ public class GraficadorPila extends GraficadorLineal{
     public GraficadorPila(int elementos, Lista<Integer> lista){
         this.elementos = elementos;
         this.lista = lista;
+        //La altura estará determinada por el número de elementos.
         altura = 60 * elementos;
+        //Para tener un pequeño borde.
         altura = altura + 40;
     }
 

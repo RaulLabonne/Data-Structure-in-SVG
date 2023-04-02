@@ -5,6 +5,7 @@ import mx.unam.ciencias.edd.ArbolBinarioCompleto;
 import mx.unam.ciencias.edd.ArbolBinarioOrdenado;
 import mx.unam.ciencias.edd.ArbolRojinegro;
 import mx.unam.ciencias.edd.Lista;
+import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorArbol;
 import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorCola;
 import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorLista;
 import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorPila;
@@ -50,10 +51,14 @@ public class ColeccionGrafica {
                 return s;
             case ARBOLBINARIO_ORDENADO:
                 ArbolBinarioOrdenado<Integer> aOrdenado = new ArbolBinarioOrdenado<>(lista);
-                return "";
+                GraficadorArbol gAOrdenado = new GraficadorArbol(aOrdenado, elementos);
+                s = gAOrdenado.codigoSVG();
+                return s;
             case ARBOLBINARIO_COMPLETO:
                 ArbolBinarioCompleto<Integer> aCompleto = new ArbolBinarioCompleto<>(lista);
-                return "";
+                GraficadorArbol gACompleto = new GraficadorArbol(aCompleto, elementos);
+                s = gACompleto.codigoSVG();
+                return s;
             case ARBOLBINARIO_ROJINEGRO:
                 ArbolRojinegro<Integer> rojinegro = new ArbolRojinegro<>(lista);
                 return "";

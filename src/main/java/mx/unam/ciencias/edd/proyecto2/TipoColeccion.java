@@ -1,7 +1,9 @@
 package mx.unam.ciencias.edd.proyecto2;
 
 
-/* Enumeración para los tipos de colecciones */
+/** 
+ * Enumeración para los tipos de colecciones 
+*/
 public enum TipoColeccion {
 
     LISTA,
@@ -25,7 +27,7 @@ public enum TipoColeccion {
             case "Cola":                    return COLA;
             case "Pila":                    return PILA;
             case "ArbolBinarioOrdenado":    return ARBOLBINARIO_ORDENADO;
-            case "ArbolBinarioCompleto":    return ARBOLBINARIO_ORDENADO;
+            case "ArbolBinarioCompleto":    return ARBOLBINARIO_COMPLETO;
             case "ArbolRojinegro":          return ARBOLBINARIO_ROJINEGRO;
             case "ArbolAVL":                return ARBOLBINARIO_AVL;
             default:                        return ERROR;

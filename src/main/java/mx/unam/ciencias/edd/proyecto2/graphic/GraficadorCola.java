@@ -35,13 +35,13 @@ public class GraficadorCola extends GraficadorLineal{
         svg += inicio();
         svg += empezarGraficar(ancho, altura);
         int auxiliar = 30;
-        int inicioFlecha = 0;
+        double inicioFlecha = 0.0;
         for (int i = 0; i < elementos; i++){
             svg += nodo(auxiliar, coordenadaY, auxiliar + 45, 60, i);
             auxiliar = auxiliar + 120;
             inicioFlecha = inicioFlecha + 120;
             if(inicioFlecha < ancho - 30)
-                svg += linea(inicioFlecha, 50, inicioFlecha + 30, 50);
+                svg += linea(inicioFlecha, 50.0, inicioFlecha + 30, 50.0);
         }
         svg += cierre();
         return svg;
@@ -50,9 +50,9 @@ public class GraficadorCola extends GraficadorLineal{
     /** 
      * Nos regresa una flecha que conecta a los nodos.
      */
-    @Override public String linea(int inicioX, int inicioY, int finalX, int finalY){
+    @Override public String linea(Double inicioX, Double inicioY, Double finalX, Double finalY){
         String flecha = super.linea(inicioX, inicioY, finalX, finalY);
-        flecha += String.format("<polygon points='%d,%d %d,%d %d,%d' fill='black'/>",
+        flecha += String.format("<polygon points='%f,%f %f,%f %f,%f' fill='black'/>",
                                 finalX, finalY, finalX - 5, finalY + 5 , finalX - 5 , finalY - 5);
         return flecha;
     }

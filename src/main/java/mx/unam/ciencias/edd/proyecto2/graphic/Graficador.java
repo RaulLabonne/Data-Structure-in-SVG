@@ -40,8 +40,8 @@ public abstract class Graficador {
      * @param finalY la coordenada en el eje Y de donde termina.
      * @return una linea que conectara los nodos o vertices de la colección para su graficación.
      */
-    public String linea(int inicioX, int inicioY, int finalX, int finalY){
-        return String.format("\t<line x1='%d' y1='%d' x2='%d' y2='%d' stroke='black' stroke-width='3' />\n"
+    public String linea(Double inicioX, Double inicioY, Double finalX, Double finalY){
+        return String.format("\t<line x1='%f' y1='%f' x2='%f' y2='%f' stroke='black' stroke-width='3' />\n"
                             , inicioX, inicioY, finalX, finalY);
     }
 

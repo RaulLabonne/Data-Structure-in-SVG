@@ -17,9 +17,9 @@ public class GraficadorLista extends GraficadorCola{
     /** 
      * Nos regresa una flecha que representa el anterior y siguiente de los nodos.
      */
-    @Override public String linea(int inicioX, int inicioY, int finalX, int finalY){
-        String dobleflecha= super.linea(inicioX, inicioY, finalX, finalY);
-        dobleflecha += String.format("<polygon points='%d,%d %d,%d %d,%d' fill='black'/>",
+    @Override public String linea(Double inicioX, Double inicioY, Double finalX, Double finalY){
+        String dobleflecha = super.linea(inicioX, inicioY, finalX, finalY);
+        dobleflecha += String.format("<polygon points='%f,%f %f,%f %f,%f' fill='black'/>",
                                     inicioX, inicioY, inicioX + 5, inicioY + 5 , inicioX + 5 , inicioY - 5);
         return dobleflecha;
     }

@@ -27,9 +27,10 @@ public abstract class GraficadorLineal extends Graficador{
      * 
      */
     public String nodo(int coordenadaX, int coordenadaY, int cLetraX, int cLetraY, int indice) {
-        String nodo = String.format("<rect x='%d' y='%d' width='%d' height='%d' fill='white' stroke='black' stroke-width='3' /> \n", coordenadaX, coordenadaY, anchoNodo, alturaNodo);
-        nodo += String.format("<text fill='black' font-family='sans-serif' font-size='40' x='%d' y='%d' text-anchor='middle'>%s</text> \n", cLetraX, cLetraY, lista.get(indice));
-
+        String nodo = String.format("<rect x='%d' y='%d' width='%d' height='%d' fill='white' stroke='black' stroke-width='3' /> \n", 
+                                    coordenadaX, coordenadaY, anchoNodo, alturaNodo);
+        nodo += String.format("<text fill='black' font-family='sans-serif' font-size='40' x='%d' y='%d' text-anchor='middle'>%s</text> \n", 
+                                cLetraX, cLetraY, lista.get(indice));
         return nodo;
     }
 

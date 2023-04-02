@@ -6,13 +6,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
-/* 
- * Clase para procesar el archivo para preparar para la graficación
- * Si no es graficable, termina el programa
+/** 
+ * Clase para procesar el archivo para preparar para la graficación.
+ * Si no es graficable, termina el programa.
  */
 public class Entrada {
     
-    /* Unico archivo que recive el programa */
+    /* Unico archivo que recibe el programa */
     String archivo;
     /* Los datos obtenidos del archivo */
     ColeccionYDatos informacion;

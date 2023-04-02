@@ -1,6 +1,6 @@
 package mx.unam.ciencias.edd.proyecto2;
 
-/* 
+/** 
  * Clase abstracta para poder leer archivos desde diferentes entradas
  */
 public abstract class Lectura {

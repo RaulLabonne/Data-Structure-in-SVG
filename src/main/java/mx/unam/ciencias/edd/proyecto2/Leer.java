@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/* 
+/** 
  * Clase para leer archivos
  */
 public class Leer extends Lectura{

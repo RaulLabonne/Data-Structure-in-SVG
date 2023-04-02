@@ -1,6 +1,6 @@
 package mx.unam.ciencias.edd.proyecto2;
 
-/* 
+/** 
  * Clase que separa los elementos del tipo de colección para poder
  * ser procesado sin problemas.
  */
