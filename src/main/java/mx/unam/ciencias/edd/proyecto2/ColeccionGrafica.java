@@ -5,11 +5,11 @@ import mx.unam.ciencias.edd.ArbolBinarioCompleto;
 import mx.unam.ciencias.edd.ArbolBinarioOrdenado;
 import mx.unam.ciencias.edd.ArbolRojinegro;
 import mx.unam.ciencias.edd.Lista;
+import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorAVL;
 import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorArbol;
 import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorCola;
 import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorLista;
 import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorPila;
-import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorRojinegro;
 
 /* 
  * Clase que dada una colección, da el codigo svg para su graficación.
@@ -62,12 +62,14 @@ public class ColeccionGrafica {
                 return s;
             case ARBOLBINARIO_ROJINEGRO:
                 ArbolRojinegro<Integer> rojinegro = new ArbolRojinegro<>(lista);
-                GraficadorRojinegro gRojinegro = new GraficadorRojinegro(rojinegro, elementos);
+                GraficadorArbol gRojinegro = new GraficadorArbol(rojinegro, elementos);
                 s = gRojinegro.codigoSVG();
                 return s;
             case ARBOLBINARIO_AVL:
-                ArbolAVL avl = new ArbolAVL<>(lista);
-                return "";
+                ArbolAVL<Integer> avl = new ArbolAVL<>(lista);
+                GraficadorAVL gAVL = new GraficadorAVL(avl, elementos);
+                s = gAVL.codigoSVG();
+                return s;
             // Si el tipo de colección es invalido.
             default:
                 System.out.println("Tipo de colección no disponible, favor de verificar que su tipo de colección este bien escrito o que se encuentre en la siguiente lista.\n" +

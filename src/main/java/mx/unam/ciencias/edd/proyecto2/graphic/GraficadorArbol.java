@@ -191,7 +191,8 @@ public class GraficadorArbol extends Graficador {
     /** 
      * Regresa el color que tendra el vertice y asigna el color de la letra.
      * Solo cambiara si el arbol es un arbol rojinegro.
-     * @return el color que tendra el vertice
+     * @param v el vertice a colorear.
+     * @return el color que tendra el vertice.
      */
     public String color(VerticeArbolBinario<Integer> v){
         if (!(ab instanceof ArbolRojinegro)){
