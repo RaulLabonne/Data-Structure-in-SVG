@@ -41,42 +41,42 @@ public class ColeccionGrafica {
             case LISTA:
                 GraficadorLista gLista = new GraficadorLista(elementos, lista);
                 s = gLista.codigoSVG();
-                return s;
+                break;
             case COLA:
                 GraficadorCola gCola = new GraficadorCola(elementos, lista.reversa());
                 s = gCola.codigoSVG();
-                return s;
+                break;
             case PILA:
                 GraficadorPila gPila = new GraficadorPila(elementos, lista.reversa());
                 s = gPila.codigoSVG();
-                return s;
+                break;
             case ARBOLBINARIO_ORDENADO:
                 ArbolBinarioOrdenado<Integer> aOrdenado = new ArbolBinarioOrdenado<>(lista);
                 GraficadorArbol gAOrdenado = new GraficadorArbol(aOrdenado, elementos);
                 s = gAOrdenado.codigoSVG();
-                return s;
+                break;
             case ARBOLBINARIO_COMPLETO:
                 ArbolBinarioCompleto<Integer> aCompleto = new ArbolBinarioCompleto<>(lista);
                 GraficadorArbol gACompleto = new GraficadorArbol(aCompleto, elementos);
                 s = gACompleto.codigoSVG();
-                return s;
+                break;
             case ARBOLBINARIO_ROJINEGRO:
                 ArbolRojinegro<Integer> rojinegro = new ArbolRojinegro<>(lista);
                 GraficadorArbol gRojinegro = new GraficadorArbol(rojinegro, elementos);
                 s = gRojinegro.codigoSVG();
-                return s;
+                break;
             case ARBOLBINARIO_AVL:
                 ArbolAVL<Integer> avl = new ArbolAVL<>(lista);
                 GraficadorAVL gAVL = new GraficadorAVL(avl, elementos);
                 s = gAVL.codigoSVG();
-                return s;
+                break;
             // Si el tipo de colección es invalido.
             default:
                 System.out.println("Tipo de colección no disponible, favor de verificar que su tipo de colección este bien escrito o que se encuentre en la siguiente lista.\n" +
                 "Tipos de datos disponibles:\n" + "\tLista\n \tCola\n \tPila\n \tArbolBinarioOrdenado\n \tArbolBinarioCompleto\n \tArbolRojinegro\n \tArbolAVL\n");
                 System.exit(1);
-                return s; 
         }
+        return s;
     }
 
 }

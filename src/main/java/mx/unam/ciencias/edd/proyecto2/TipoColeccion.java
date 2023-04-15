@@ -30,6 +30,7 @@ public enum TipoColeccion {
             case "ArbolBinarioCompleto":    return ARBOLBINARIO_COMPLETO;
             case "ArbolRojinegro":          return ARBOLBINARIO_ROJINEGRO;
             case "ArbolAVL":                return ARBOLBINARIO_AVL;
+            case "Grafica":                 return GRAFICA;
             default:                        return ERROR;
         }
     }
