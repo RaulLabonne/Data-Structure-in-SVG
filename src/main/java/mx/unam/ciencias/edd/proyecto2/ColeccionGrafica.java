@@ -4,10 +4,13 @@ import mx.unam.ciencias.edd.ArbolAVL;
 import mx.unam.ciencias.edd.ArbolBinarioCompleto;
 import mx.unam.ciencias.edd.ArbolBinarioOrdenado;
 import mx.unam.ciencias.edd.ArbolRojinegro;
+import mx.unam.ciencias.edd.Grafica;
 import mx.unam.ciencias.edd.Lista;
 import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorAVL;
 import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorArbol;
 import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorCola;
+import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorGrafica;
+//import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorGrafica;
 import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorLista;
 import mx.unam.ciencias.edd.proyecto2.graphic.GraficadorPila;
 
@@ -70,13 +73,28 @@ public class ColeccionGrafica {
                 GraficadorAVL gAVL = new GraficadorAVL(avl, elementos);
                 s = gAVL.codigoSVG();
                 break;
+            case GRAFICA:
+                Grafica<Integer> grafica = new Grafica<>();
+                if (elementos % 2 != 0)
+                    uso();
+                GraficaValida valido = new GraficaValida(lista.copia(), elementos);
+                grafica = valido.getGrafica();
+                GraficadorGrafica gGrafica = new GraficadorGrafica(grafica);
+                s = gGrafica.codigoSVG();
+                break;
             // Si el tipo de colección es invalido.
             default:
-                System.out.println("Tipo de colección no disponible, favor de verificar que su tipo de colección este bien escrito o que se encuentre en la siguiente lista.\n" +
-                "Tipos de datos disponibles:\n" + "\tLista\n \tCola\n \tPila\n \tArbolBinarioOrdenado\n \tArbolBinarioCompleto\n \tArbolRojinegro\n \tArbolAVL\n");
-                System.exit(1);
+                System.out.println("Caso default");
+                uso();
         }
         return s;
+    }
+
+    private void uso(){
+        System.out.println("Tipo de colección no disponible, favor de verificar que su tipo de colección este bien escrito o que se encuentre en la siguiente lista.\n" +
+        "Tipos de datos disponibles:\n" + "\tLista\n \tCola\n \tPila\n \tArbolBinarioOrdenado\n \tArbolBinarioCompleto\n \tArbolRojinegro\n \tArbolAVL\n" +
+        "En caso de ser una grafica, la cantidad de elementos debe ser par");
+        System.exit(1);
     }
 
 }

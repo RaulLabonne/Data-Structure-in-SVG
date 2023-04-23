@@ -27,8 +27,8 @@ public abstract class Graficador {
      * @param altura la altura de la imagen.
      * @return el codigo para darle el tamaño necesario para empezar a graficar.
      */
-    public static String empezarGraficar(int ancho, int altura){
-        return String.format("<svg width='%d' height='%d'>\n \t<g>\n", ancho, altura);
+    public static String empezarGraficar(Double ancho, Double altura){
+        return String.format("<svg width='%f' height='%f'>\n \t<g>\n", ancho, altura);
     }
 
     /**

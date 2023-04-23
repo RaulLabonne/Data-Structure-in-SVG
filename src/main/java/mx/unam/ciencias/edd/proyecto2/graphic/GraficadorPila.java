@@ -8,9 +8,9 @@ import mx.unam.ciencias.edd.Lista;
 public class GraficadorPila extends GraficadorLineal{
     
     /* La altura de la imagen */
-    int altura;
+    double altura;
     /* El ancho definitivo de la imagen */
-    final int ancho = 150;
+    final double ancho = 150;
     /* La coordenada en el eje X definitiva del nodo */
     final int coordenadaX = 30;
 

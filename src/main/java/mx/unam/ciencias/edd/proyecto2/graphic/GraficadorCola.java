@@ -8,9 +8,9 @@ import mx.unam.ciencias.edd.Lista;
 public class GraficadorCola extends GraficadorLineal{
 
     /* Altura definitiva de la imagen. */
-    final int altura = 100;
+    final double altura = 100;
     /* Ancho de la imagen. */
-    int ancho;
+    double ancho;
     /* Coordenada en el eje Y definitiva para los nodos */
     final int coordenadaY = 20;
 

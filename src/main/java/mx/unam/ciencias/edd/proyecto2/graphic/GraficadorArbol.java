@@ -17,9 +17,9 @@ public class GraficadorArbol extends Graficador {
     /* Altura del arbol */
     int alturaArbol;
     /* Ancho de la imagen */
-    int ancho;
+    double ancho;
     /* Altura de la imagen */
-    int altura;
+    double altura;
     /* Distancia definitiva entre cada nivel */
     final int distancia = 120;
     /* Un auxiliar para poder usar nuestro metodo recursivo */
