@@ -37,6 +37,8 @@ public class Entrada {
      */
     public void setNumeros(){
         for (int i = 0; i < informacion.getElementos().length; i++){
+            if (informacion.elementos[i].isEmpty())
+                continue;
             try {
                 int n = Integer.parseInt(informacion.elementos[i]);
                 lista.agrega(n);

@@ -76,7 +76,7 @@ public class ColeccionGrafica {
             case GRAFICA:
                 Grafica<Integer> grafica = new Grafica<>();
                 if (elementos % 2 != 0)
-                    uso();
+                    usoGrafica();
                 GraficaValida valido = new GraficaValida(lista.copia(), elementos);
                 grafica = valido.getGrafica();
                 GraficadorGrafica gGrafica = new GraficadorGrafica(grafica);
@@ -84,17 +84,21 @@ public class ColeccionGrafica {
                 break;
             // Si el tipo de colección es invalido.
             default:
-                System.out.println("Caso default");
                 uso();
         }
         return s;
     }
 
+    /* Cierra el programa para el caso default o invalido  */
     private void uso(){
         System.out.println("Tipo de colección no disponible, favor de verificar que su tipo de colección este bien escrito o que se encuentre en la siguiente lista.\n" +
-        "Tipos de datos disponibles:\n" + "\tLista\n \tCola\n \tPila\n \tArbolBinarioOrdenado\n \tArbolBinarioCompleto\n \tArbolRojinegro\n \tArbolAVL\n" +
-        "En caso de ser una grafica, la cantidad de elementos debe ser par");
+        "Tipos de datos disponibles:\n" + "\tLista\n \tCola\n \tPila\n \tArbolBinarioOrdenado\n \tArbolBinarioCompleto\n \tArbolRojinegro\n \tArbolAVL\n");
         System.exit(1);
     }
 
+    /* Cierra el programa si en el caso Grafica la cantidad de elementos es impar */
+    private void usoGrafica(){
+        System.out.println("Para poder generar una Grafica, la cantidad de elementos debe ser par: \n" + "Cantidad de elementos: " + elementos);
+        System.exit(1);
+    }
 }
